@@ -1,0 +1,350 @@
+/* app/style.css — สไตล์ตกแต่งสำหรับระบบ Auth MySQL */
+:root {
+  --primary: #00758f;
+  --primary-dark: #005a6e;
+  --primary-light: #e6f4f7;
+  --accent: #f29111;
+  --danger: #d93829;
+  --danger-dark: #b52b1e;
+  --bg-start: #f0f5f9;
+  --bg-end: #e4eef3;
+  --surface: #ffffff;
+  --border: #dde5ed;
+  --text: #1a2530;
+  --muted: #5f7082;
+  --shadow: 0 12px 32px rgba(15, 35, 55, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar ด้านบน */
+.top-nav {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto 24px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 14px rgba(15, 35, 55, 0.04);
+}
+
+.brand-link {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* กล่องสีขาวกลางจอ ใช้ในทุกหน้า */
+.auth-box {
+  width: 100%;
+  max-width: 440px;
+  margin: 16px auto;
+  padding: 32px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.auth-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--primary-light);
+  border-radius: 999px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* การ์ดข้อมูลนักศึกษาในหน้าแรก */
+.student-card {
+  margin: 20px 0 24px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #00758f 0%, #005266 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 117, 143, 0.22);
+}
+
+.student-card .student-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.student-card .student-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.student-card .student-id {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* เมนูลิงก์หน้าแรก */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.menu-link:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 117, 143, 0.1);
+}
+
+.menu-link-title {
+  font-weight: 600;
+  font-size: 15px;
+  display: block;
+}
+
+.menu-link-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+  display: block;
+}
+
+.menu-arrow {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ฟอร์มและอินพุต */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input,
+button {
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+input {
+  background: #f9fbfd;
+  color: var(--text);
+}
+
+input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 117, 143, 0.15);
+}
+
+button {
+  margin-top: 4px;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 117, 143, 0.2);
+}
+
+button:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ปุ่ม Logout */
+.btn-logout {
+  width: 100%;
+  margin-top: 16px;
+  background: var(--danger);
+  border-color: var(--danger);
+  box-shadow: 0 4px 12px rgba(217, 56, 41, 0.2);
+}
+
+.btn-logout:hover {
+  background: var(--danger-dark);
+  border-color: var(--danger-dark);
+}
+
+/* ข้อความแจ้ง error ใต้ฟอร์ม */
+.error {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  background: #fdecea;
+  border: 1px solid #f5c2c0;
+  border-radius: 10px;
+  color: #b71c1c;
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.auth-footer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* หน้า Dashboard */
+.profile-card {
+  padding: 18px;
+  margin-bottom: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.profile-label {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.profile-value {
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.loading-box {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 20px;
+}
